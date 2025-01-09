@@ -91,7 +91,7 @@ function fillGallery() {
     if (window.innerWidth < 500) counts = 4;
 
     for (let i = 0; i < counts; i++) {
-      const randomNumber = randomInteger(1, 35);
+      // const randomNumber = randomInteger(1, 35);
 
       const li = document.createElement('li');
       li.classList.add('gallery__item');
@@ -113,7 +113,7 @@ fillGallery();
 
 //refresh gallery
 document.querySelector('.gallery__refresh-btn')
-  .addEventListener('click', e) => {
+  .addEventListener('click', () => {
     start = false;
     fillGallery();
   });
