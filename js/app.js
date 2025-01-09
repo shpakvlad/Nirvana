@@ -113,7 +113,7 @@ fillGallery();
 
 //refresh gallery
 document.querySelector('.gallery__refresh-btn')
-  .addEventListener('click', (e) => {
+  .addEventListener('click', e) => {
     start = false;
     fillGallery();
   });
@@ -122,13 +122,13 @@ document.querySelector('.gallery__refresh-btn')
 const dialogFormAuthor = document.querySelector('#dialog__from-author');
 //dialog show
 document.querySelector('.dialog__form-author-open')
-  .addEventListener('click', (e) => {
+  .addEventListener('click', () => {
     dialogFormAuthor.showModal();
 });
 
 //dialog close
 document.querySelector('.dialog__button-close')
-  .addEventListener('click', (e) => {
+  .addEventListener('click', () => {
     dialogFormAuthor.close();
 });
 
