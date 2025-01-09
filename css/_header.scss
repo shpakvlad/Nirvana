@@ -1,0 +1,89 @@
+@import "colors", "mixins";
+
+header {
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+  background-color: $body-bg-color;
+  z-index: 1000;
+
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  //noinspection CssInvalidFunction
+  animation-timeline: scroll(block);
+  animation-range: 0 200px;
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo-text {
+      @include fluid-font-size(25, 14);
+      text-transform: uppercase;
+      font-family: "Delamoore", serif;
+      color: $slogan-color;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 10px;
+
+      .nav__item {
+        padding: 10px rem(15);
+        text-transform: uppercase;
+        transition: .3s background-color ease-in-out, 0.5s color;
+        @include fluid-font-size(16, 12);
+        border-radius: rem(3);
+        border: 1px transparent solid;
+
+        animation-name: scrolling-header-item;
+        animation-fill-mode: both;
+        //noinspection CssInvalidFunction
+        animation-timeline: scroll(block);
+        animation-range: 0 200px;
+
+        &:hover {
+         border: 1px $accent-color solid;
+        }
+      }
+    }
+  }
+}
+//header
+.header {
+
+}
+@keyframes scrolling-header {
+  to {
+    padding: 0;
+    box-shadow: 0 3px 14px -8px $slogan-color; //rgba(0,0,0,0.8);
+  }
+}
+
+@keyframes scrolling-header-item {
+  to {
+    padding: 0;
+  }
+}
+
+// progress bar
+@keyframes fill-progress {
+  to {
+    width: 100%;
+  }
+}
+
+.scroll-progress-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: $slogan-color;
+
+  animation-name: fill-progress;
+  animation-timing-function: linear;
+  //noinspection CssInvalidFunction
+  animation-timeline: scroll(block);
+}

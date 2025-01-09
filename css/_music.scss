@@ -1,0 +1,89 @@
+//*************************************
+// CSS style module for section slider
+// author: Shpakov Vladyslav
+// at: 15.12.2024 14:46
+//*************************************
+
+@import "mixins";
+
+#section__music {
+  .swiper {
+    max-width: 900px;
+    max-height: 900px;
+    z-index: 0;
+
+    .swiper__button-prev:after,
+    .swiper__button-next:after {
+      width: 70px;
+      aspect-ratio: 1/1;
+      padding: 30px;
+      @include fluid-font-size(25, 14);
+      align-items: center;
+      justify-content: center;
+      color: $accent-color;
+    }
+
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      display: inline-block;
+      background-color: $accent-color;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .swiper-slide {
+      max-width: 900px;
+      aspect-ratio: 1/1;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: relative;
+      cursor: pointer;
+
+      .swiper__album-content {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 70px;
+        margin-left: 70px;
+        padding-right: 30px;
+
+        .swiper__album-header {
+          margin-bottom: 30px;
+          @include fluid-font-size(25, 16);
+          color: $hover-text-color;
+        }
+
+        .swiper__album-songs-list {
+          color: $slogan-color;
+          margin-left: 50px;
+          @include fluid-font-size(23, 12);
+        }
+      }
+    }
+
+    .album-1 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/bleach-album.jpg);
+    }
+
+    .album-2 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/nevermind-album.jpg);
+    }
+
+    .album-3 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/incesticide-album.jpg);
+    }
+
+    .album-4 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/inutero-album.jpg);
+    }
+
+    .album-5 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/unplugged-album.jpg);
+    }
+
+    .album-6 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/fromthe-album.jpg);
+    }
+  }
+}

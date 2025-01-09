@@ -1,0 +1,47 @@
+@import "mixins";
+
+.section__hero {
+  width: 100vw;
+  height: 100dvh;
+  transition: 0.3s;
+
+  #section__hero-img-container {
+    img {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 3s ease-in-out, transform 4s ease-in-out;
+      transform: translate(0, 0);
+      z-index: -1000;
+      width: 20%;
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    justify-content: center;
+
+    .hero__header {
+      color: $hero-text-color;
+      @include fluid-font-size(200, 100);
+      text-transform: uppercase;
+      font-family: 'Delamoore', serif;
+      letter-spacing: 10px;
+      line-height: 1;
+    }
+
+    .hero__slogan {
+      @include fluid-font-size(40, 20);
+      font-family: "Comforter Brush", serif;
+      color: $slogan-color;
+    }
+
+    .hero__buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+    }
+  }
+}

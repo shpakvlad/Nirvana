@@ -1,0 +1,45 @@
+@import "colors", "mixins";
+
+#section__history {
+  background-color: $body-accent-bg-color;
+
+  a {
+    color: $slogan-color;
+  }
+
+  .wrapper {
+    max-width: 80ch;
+    p:not(:last-of-type) {
+      margin-bottom: rem(30);
+    }
+
+    .spoiler {
+      &__header {
+        padding: rem(10);
+        margin-bottom: rem(20);
+        border: 2px solid $accent-color;
+        list-style-type: none;
+      }
+
+      &__text {
+        @include fluid-font-size(16, 14);
+        padding: 0 rem(30);
+        margin-bottom: rem(20);
+        //&:not(:last-of-type) {
+        //  margin-bottom: rem(20);
+        //}
+      }
+
+      ul {
+        margin-left: rem(50);
+        margin-bottom: rem(30);
+        list-style-type: none;
+
+        li {
+          margin: rem(15) 0;
+          @include fluid-font-size(16, 12);
+        }
+      }
+    }
+  }
+}

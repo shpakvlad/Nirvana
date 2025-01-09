@@ -1,0 +1,50 @@
+//*************************************
+// CSS style module for section gallery
+// author: Shpakov Vladyslav
+// at: 15.12.2024 20:35
+//*************************************
+@import "mixins";
+
+#section__gallery {
+
+
+  .gallery__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
+    .gallery__item {
+      list-style-type: none;
+      background: black;
+      margin: 0;
+      overflow: hidden;
+      width: 300px;
+
+      .gallery__image {
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        opacity: 0.7;
+        transform: scale(1.25);
+        transition: transform 0.5s, opacity 0.5s;
+
+        &:hover {
+          transform: scale(1.08);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .gallery__button-panel {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: rem(120);
+
+    .gallery__refresh-btn {
+      @include fluid-font-size(16, 14);
+    }
+  }
+}

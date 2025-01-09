@@ -1,0 +1,48 @@
+//*************************************
+// CSS style module for section facts
+// author: Shpakov Vladyslav
+// at: 16.12.2024 7:14
+//*************************************
+@import "colors", "mixins";
+
+#section__facts {
+  background-color: $body-accent-bg-color;
+
+  .facts__list {
+
+    .facts__item {
+      padding-left: 20px;
+
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+
+      &:nth-child(9) {
+        color: $slogan-color;
+      }
+
+      .fact__header {
+        .fact__header-text {
+          @include fluid-font-size(18, 14);
+        }
+
+        .fact__text-list {
+          margin-bottom: 30px;
+          .text__list-item {
+            margin: 20px 0 20px 50px;
+
+            a {
+              color: $hover-text-color;
+            }
+          }
+
+        }
+      }
+
+
+    }
+
+
+  }
+
+}

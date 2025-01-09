@@ -1,0 +1,33 @@
+//*************************************
+// CSS style module for section footer
+// author: Shpakov Vladyslav
+// at: 16.12.2024 10:18
+//*************************************
+
+@import "mixins";
+
+footer {
+  padding: rem(30) 0;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .footer__left {
+
+      .logo-text {
+        margin-bottom: 30px;
+      }
+
+      .main-nav {
+        display: flex;
+        flex-flow: column;
+      }
+    }
+  }
+  .footer__copyright {
+    width: 100%;
+    text-align: center;
+    @include fluid-font-size(14, 14);
+  }
+}

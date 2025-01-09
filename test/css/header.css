@@ -1,0 +1,34 @@
+header {
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+  background-color: #121212;
+  z-index: 1000;
+}
+header .header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header__inner .logo-text {
+  font-size: clamp(0.875rem, 0.6370192308rem + 1.0576923077vw, 1.5625rem);
+  text-transform: uppercase;
+  font-family: "Delamoore", serif;
+}
+header .header__inner .main-nav {
+  display: flex;
+  gap: 10px;
+}
+header .header__inner .main-nav .nav__item {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  transition: 0.3s background-color ease-in-out, 0.5s color;
+  font-size: clamp(0.75rem, 0.6634615385rem + 0.3846153846vw, 1rem);
+  border-radius: 0.1875rem;
+  border: 1px transparent solid;
+}
+header .header__inner .main-nav .nav__item:hover {
+  border: 1px #6e6e6e solid;
+}
+
+/*# sourceMappingURL=header.css.map */

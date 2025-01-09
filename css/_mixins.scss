@@ -1,0 +1,58 @@
+@use 'sass:math';
+
+@import "colors";
+
+@mixin fluid-font-size($max, $min) {
+  $maxViewportWith: 1400;
+  $minViewportWith: 360;
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWith, 16);
+  $minWidth: math.div($minViewportWith, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+  font-size: clamp(
+    #{$minSize * 1rem},
+    #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+    #{$maxSize * 1rem}
+  );
+}
+
+@function rem($pixels) {
+  @if math.is-unitless($pixels) {
+    @return math.div($pixels, 16) + rem;
+  } @else {
+    @error 'Don`t use units!!! Only numbers are allowed!';
+  }
+}
+
+@mixin button() {
+  padding: rem(10) rem(40);
+  color: $body-bg-color;
+  text-transform: uppercase;
+  border-radius: rem(3);
+  border: 2px solid $accent-color;
+  transition: .3s background-color ease-in-out,
+              .3s color ease-in-out;
+  background-color: $accent-color;
+
+  &:hover {
+    background-color: transparent;
+    color: $accent-color;
+  }
+}
+
+@mixin button-ghost() {
+  @include button();
+  background-color: transparent;
+  color: $accent-color;
+
+  &:hover {
+    background-color: $accent-color;
+    color: $body-bg-color;
+  }
+}
+

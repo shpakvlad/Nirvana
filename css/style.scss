@@ -1,0 +1,151 @@
+@import "colors", "fonts", "variables", "mixins", "queries";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: $accent-color;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  color: white;
+  font-family: Sawarabi, serif;
+  @include fluid-font-size(25, 14);
+  scroll-timeline: --full-page-scroll block;
+}
+
+body {
+  background-color: $body-bg-color;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn {
+  @include button();
+}
+
+section {
+  padding: rem(100) 0;
+  text-align: justify;
+}
+
+h2 {
+  width: 100%;
+  margin-bottom: 70px;
+  padding-bottom: 20px;
+  @include fluid-font-size(35, 25);
+  color: $slogan-color;
+  font-family: "Sawarabi", serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 5px;
+  box-shadow: $accent-color 0 4px 0;
+}
+
+summary {
+  cursor: pointer;
+}
+
+.btn {
+  @include button;
+}
+
+.btn-ghost {
+  @include button-ghost;
+}
+
+/***** FOR TEST *****/
+.for-test {
+  @include fluid-font-size(20, 14);
+}
+
+//*** SCROLL
+::-webkit-scrollbar {
+  width: 0;
+  background-color: $accent-color;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: $slogan-color;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background-color: $accent-color;;
+}
+
+//*** dialog
+#dialog__from-author {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  border: 2px $slogan-color solid;
+  border-radius: rem(5);
+  background-color: $body-accent-bg-color;
+  color: white;
+  position: relative;
+
+  .dialog__text {
+    margin-bottom: 20px;
+    @include fluid-font-size(16, 14);
+  }
+
+  .dialog__button-close {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  &::backdrop {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+  }
+}
+
+//*** scroll button
+@keyframes scroll-button {
+  to {
+    bottom: rem(30);
+  }
+
+}
+
+.scroll-up__button {
+  position: fixed;
+  right: rem(50);
+  bottom: rem(-100);
+  width: rem(50);
+  aspect-ratio: 1 / 1;
+
+  animation-name: scroll-button;
+  animation-fill-mode: both;
+  //noinspection CssInvalidFunction
+  animation-timeline: scroll(block);
+  animation-range: 0 500px;
+
+  svg {
+    &:hover {
+      fill: #121212;
+    }
+  }
+}
+
+
+@import "header";
+@import "hero";
+@import "history";
+@import "music";
+@import "gallery";
+@import "facts";
+@import "footer";
